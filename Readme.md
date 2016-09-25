@@ -6,17 +6,17 @@ push to your Github repository so that you can understand how to create a simple
 build and deploy pipeline.
 
 ## Acceptance Criteria
-* I should receive a single email per team
-* The email should contain the name of the individuals on your team
-* The email should contain a link to your Github repository
-* The Github repository should not contain any password or secret keys
-* The email should contain a link to your Travis CI project
-* The email should contain a link to your running application that was deployed
+* Homework should be submitted via Blackboard and one submission per team
+* Please submit a document that :
+ * Contains the name of the individuals on your team
+ * Contains a link to your Github repository
+ * Contains a link to your running application
+ * The Github repository should not contain any password or secret keys
+ * Contains a link to your Travis CI project
+ * Contains a link to your running application that was deployed
 automatically
 * I should be able to use the application to upload an image
 
-
-travis-ci.org
 
 # Travis CI
 Travis CI is a build and deployment tool that can be used for free on public
@@ -31,32 +31,14 @@ application.properties file that was not checked into Github.  Now that we are
 moving from a local build to a cloud hosted build, we need a strategy to handle
 this information.
 
-## Gradle Properties and Travis CI Environment Variables
-One approach is to have Gradle fill in the sensitive values during the build.
-Gradle is flexible enough to read property values from a config file or from
-environment variables.  You can store the values locally in a gradle.properties
-file that is not stored in Github. For the Travis CI build, you can set the values
-as build environment variables.
+The Twelve-Factor apps design pattern gives us a mechanism to handle the application's
+configuration -
 
-### Gradle's Properties File
-https://docs.gradle.org/current/userguide/build_environment.html
-
-### Travis CI Environment variables
-https://docs.travis-ci.com/user/environment-variables/
-
-### More Info on Gradle Properties
-http://mrhaki.blogspot.com/2010/09/gradle-goodness-different-ways-to-set.html
-https://bowerstudios.com/node/1066
-
-## Travis CI Encryption
-Another possible approach is to encrypt the keys using the Travis CI command
-line tool.  Once encrypted, these values can be stored in Github.
-
-https://docs.travis-ci.com/user/encryption-keys/
+https://12factor.net/config
 
 # Automatically Deploying
 
-##Cloudfoundry
+##Cloudfoundry (Recommended)
 Travis CI can deploy to Cloudfoundry -
 
 https://docs.travis-ci.com/user/deployment/cloudfoundry
